@@ -1,0 +1,38 @@
+/* Write your CSS here. */
+
+.pf{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.wgs{
+    position: relative;
+    width: 320px;
+    height: 241px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.wgs__mole-head{
+    position: absolute;
+    width: 188px;
+    height: 178px;
+    left: 55px;
+    transition: margin-top 0.25s;
+}
+
+.wgs__dirt-pile{
+    position: absolute;
+    width: 320px;
+    height: 110px;
+    bottom: 0;
+}
+
+.wgs__mole-head--hidden {
+    margin-top: 241px;
+}
+
+.wgs__mole-head:not(.wgs__mole-head--whacked) {
+
+}
