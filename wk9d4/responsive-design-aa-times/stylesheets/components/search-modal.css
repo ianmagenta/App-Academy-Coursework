@@ -1,0 +1,20 @@
+.masthead__search{
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  height: 30px;
+  position:absolute;
+  left: 100px;
+}
+
+#go-button{
+  position: absolute;
+  left: 295px;
+}
+
+.masthead__search--hidden{
+  display: none;
+}
+
+.masthead__button--hidden{
+  display: none;
+}

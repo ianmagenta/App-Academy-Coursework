@@ -2,8 +2,7 @@
 
 .pf{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
 }
 
 .wgs{
@@ -31,8 +30,4 @@
 
 .wgs__mole-head--hidden {
     margin-top: 241px;
-}
-
-.wgs__mole-head:not(.wgs__mole-head--whacked) {
-
 }

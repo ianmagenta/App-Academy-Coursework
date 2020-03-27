@@ -1,0 +1,107 @@
+.interests-bar {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr 2fr 1fr 1fr;
+  grid-template-areas:
+  "dog-image dog-headline cat-image cat-headline plug-image plug-headline stocks stocks2 sun-image temp"
+  "dog-image dog-story cat-image cat-story plug-image plug-story stocks stocks2 sun-image temp"
+  "dog-image dog-story cat-image cat-story plug-image plug-story stocks stocks2 sun-image temp";
+  grid-column-gap: 10px;
+  border-top: 5px solid black;
+  padding-top: 10px;
+  border-bottom: 5px solid black;
+  padding-bottom: 10px;
+}
+
+#temp{
+  align-self: center;
+}
+.interests-bar__headline, .interests-bar__stockname, #temp{
+  font-weight: bold;
+}
+
+#stocks {
+  grid-area: stocks;
+}
+
+#stocks2 {
+  grid-area: stocks2;
+  border-right: 1px solid #e2e2e2;
+
+}
+
+#stocks, #stocks2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#stocknum3 {
+  grid-area: stocknum3;
+}
+
+#stock3 {
+  grid-area: stock3;
+}
+
+#temp {
+  grid-area: temp;
+}
+
+#stock2 {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+#plug-story {
+  grid-area: plug-story;
+  border-right: 1px solid #e2e2e2;
+}
+
+#cat-story {
+  grid-area: cat-story;
+  border-right: 1px solid #e2e2e2;
+}
+
+#dog-story{
+  grid-area: dog-story;
+  border-right: 1px solid #e2e2e2;
+}
+
+#sun-image {
+  grid-area: sun-image;
+}
+
+#stock1 {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+#plug-headline{
+  grid-area: plug-headline;
+  border-right: 1px solid #e2e2e2;
+}
+
+#plug-image {
+  grid-area: plug-image;
+}
+
+#cat-headline {
+  grid-area: cat-headline;
+  border-right: 1px solid #e2e2e2;
+}
+
+#cat-image {
+  grid-area: cat-image;
+}
+
+#dog-headline {
+  grid-area: dog-headline;
+  border-right: 1px solid #e2e2e2;
+}
+
+#dog-image {
+  grid-area: dog-image;
+}
+
+#sun-image {
+  grid-area: sun-image;
+}

@@ -1,0 +1,16 @@
+.nav__list {
+    display: flex;
+    justify-content: center;
+}
+
+.nav__items {
+    justify-self: center;
+    font-size: 12pt;
+    padding: 15px;
+}
+
+.nav {
+    /* display: flex;
+    justify-self: center;
+    width: 80%; */
+}
