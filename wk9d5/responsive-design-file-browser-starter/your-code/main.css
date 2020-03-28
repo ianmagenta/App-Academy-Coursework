@@ -1,0 +1,59 @@
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 75rem;
+    font-size: 100px;
+}
+
+/* .tree-entry * {
+    padding: 0 10px;
+} */
+
+.tree-entry {
+    display: grid;
+    grid-template-columns: auto 30px 250px 250px;
+    grid-template-areas:
+    "arrow icon name time";
+    justify-content: start;
+}
+
+.tree-entry__icon {
+    grid-area: icon;
+    width: 20px;
+    height: 20px;
+}
+
+.tree-entry__name {
+    grid-area: name;
+}
+
+.tree-entry__time {
+    grid-area: time;
+}
+
+.tree-entry__discolsure {
+    grid-area: arrow;
+}
+
+.tree-entry__disclosure--closed::before {
+    content: "\25B6";
+}
+
+.tree-entry__disclosure--opened::before {
+  content: "\25BC";
+}
+
+.tree-entry__disclosure--disabled {
+    width: 12.31px;
+}
+
+body {
+    display: flex;
+}
