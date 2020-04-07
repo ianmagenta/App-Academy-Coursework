@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add an item</title>
+</head>
+
+<body>
+    <header>
+        <a href="/">Back to the main page</a>
+    </header>
+    <main>
+        <form method="post" action="/items">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div>
+                <label for="description">Description</label>
+                <textarea name="description" id="description" required></textarea>
+            </div>
+            <div>
+                <label for="amount">Starting amount</label>
+                <input type="number" name="amount" id="amount" required>
+            </div>
+            <div>
+                <button type="submit">Create a new item</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
