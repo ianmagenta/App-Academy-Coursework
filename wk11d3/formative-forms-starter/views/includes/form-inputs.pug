@@ -1,0 +1,9 @@
+mixin createForm(type, name, value, label)
+    input(type=type name=name value=value label=label)
+
++createForm("hidden", "_csrf", csrfToken)
++createForm("text", "firstName", firstName, "First Name")
++createForm("text", "lastName", lastName, "Last Name")
++createForm("email", "email", email, "Email")
++createForm("password", "password", password, "First Name")
++createForm("password", "confirmedPassword", confirmedPassword, "First Name")

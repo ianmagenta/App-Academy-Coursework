@@ -1,0 +1,32 @@
+extends layout
+
+mixin option(value, text)
+  option(value=value selected=(value === favoriteBeatle)) #{text}
+
+block content
+    include includes/errors
+    form(action="/create-interesting" method="post")
+        include includes/form-inputs
+        +createForm("number", "age", age, "Age")
+        .form-group
+            label(for='favorite-beatle') Favorite Beatle
+            select#favorite-beatle.form-control(name='favoriteBeatle')
+                +option('', '--Please choose an option--')
+                +option('John', 'John')
+                +option('Paul', 'Paul')
+                +option('Ringo', 'Ringo')
+                +option('George', 'George')
+                +option('Scooby-Doo', 'Scooby-Doo')
+        //- select(type="dropdown", name="favoriteBeatle", label="Favorite Beatle")
+        //-     option(value="" selected=(value === favoriteBeatle)) --Please choose an option--
+        //-     option(value="John" selected=(value === favoriteBeatle)) John
+        //-     option(value="Paul" selected=(value === favoriteBeatle)) Paul
+        //-     option(value="Ringo" selected=(value === favoriteBeatle)) Ringo
+        //-     option(value="George" selected=(value === favoriteBeatle)) George
+        //-     option(value="Scooby-Doo" selected=(value === favoriteBeatle)) Scooby-Doo
+        label(for='iceCream') Likes Ice Cream
+        input(type="checkbox" name="iceCream" value=iceCream label="Ice Cream" checked=(iceCream === 'on'))
+        input(type="submit" value="Create Interesting User")
+
+
+//- selected=(value === favoriteBeatle)
