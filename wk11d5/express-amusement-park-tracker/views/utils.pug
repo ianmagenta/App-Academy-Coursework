@@ -1,0 +1,15 @@
+mixin errorSummary(errors)
+    if errors
+        div(class='alert alert-danger' role='alert')
+            p The following error(s) occurred:
+            ul
+                each error in errors
+                    li= error
+
+mixin textField(labelText, fieldName, fieldValue, fieldPlaceholder, isMultiline)
+    div
+        label(for=fieldName)= labelText
+            if isMultiline
+                textarea(id=fieldName name=fieldName rows="5")= fieldValue
+            else
+                input(type='text' id=fieldName name=fieldName value=fieldValue placeholder=fieldPlaceholder)

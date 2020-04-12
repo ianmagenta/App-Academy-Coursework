@@ -1,0 +1,11 @@
+extends layout.pug
+
+block content
+    h3= park.parkName
+    div
+        p Proceed with deleting this park?
+    div
+        form(action=`/park/delete/${park.id}`, method="post")
+            input(type="hidden" name="_csrf" value=csrfToken)
+            button(type="submit") Delete Park
+            a(href=`/park/${park.id}`) Cancel

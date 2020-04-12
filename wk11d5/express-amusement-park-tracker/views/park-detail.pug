@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+    h3= park.parkName
+        div
+            ul
+                li= park.location
+                li= park.opened
+                li= park.size
+        div
+            p= park.description
+        div
+            a(href=`/park/edit/${park.id}` role='button' class='btn btn-success') Edit
+            a(href=`/park/delete/${park.id}` role='button' class='btn btn-success') Delete
+            a(href="/parks" role='button' class='btn btn-success') Return to List
