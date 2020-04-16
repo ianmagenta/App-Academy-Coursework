@@ -3,8 +3,11 @@ const router = express.Router();
 const db = require("../db/models");
 const { Tweet } = db;
 const { check, validationResult } = require('express-validator');
+const { requireAuth } = require("../auth");
 
 const asyncHandler = (handler) => (req, res, next) => handler(req, res, next).catch(next);
+
+router.use(requireAuth);
 
 function tweetNotFoundError(id) {
     const err = new Error(`Could not find Tweet ID ${id}`);
@@ -37,7 +40,13 @@ const tweetValidators = [
 ];
 
 router.get("/", asyncHandler(async (req, res) => {
-    const tweets = await Tweet.findAll({ order: ["id"] });
+    console.log("hello from get /tweets!");
+    const tweets = await Tweet.findAll({
+        include: [{ model: db.User, as: "user", attributes: ["username"] }],
+        order: [["createdAt", "DESC"]],
+        attributes: ["message"],
+    });
+    console.log(tweets);
     res.json({ tweets });
 }));
 
@@ -55,7 +64,8 @@ router.get("/:id(\\d+)", asyncHandler(async (req, res, next) => {
 router.post("/", tweetValidators, handleValidationErrors, asyncHandler(async (req, res) => {
     const { message } = req.body;
     const tweet = await Tweet.create({
-        message
+        message,
+        userId: req.user.id
     });
     res.json({ tweet });
 }));
