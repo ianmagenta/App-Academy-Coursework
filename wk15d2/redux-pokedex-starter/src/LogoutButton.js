@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import { baseUrl } from './config';
+import { connect } from "react-redux";
+import { logout } from "./store/authentication";
+
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import { baseUrl } from "./config";
 
 class LogoutButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedOut: false
+      loggedOut: false,
     };
   }
 
   logout = () => {
     fetch(`${baseUrl}/session`, {
-      method: 'delete',
+      method: "delete",
       headers: { Authorization: `Bearer ${this.props.token}` },
     }).then(() => this.setState({ loggedOut: true }));
-  }
+  };
 
   render() {
     if (this.state.loggedOut) {
