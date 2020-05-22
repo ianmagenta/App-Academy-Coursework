@@ -62,20 +62,18 @@ class Node:
 
     def breadth_search(self, value):
         visited = set()
-        nodeArray = [self]
+        node_array = [self]
 
-        while len(nodeArray):
-            currentNode = nodeArray.pop(0)
-            if currentNode not in visited:
-                visited.add(currentNode)
-                if currentNode.value == value:
-                    return currentNode
-                nodeArray.append(*currentNode.children)
+        while len(node_array):
+            current_node = node_array.pop(0)
+            if current_node not in visited:
+                visited.add(current_node)
+                if current_node.value == value:
+                    return current_node
+                node_array.extend(current_node.children)
 
-            # if queue[0].value == value:
-            #     return queue[0]
-            # queue.append(queue[0]._children)
-            # queue.pop(0)
+    def __repr__(self):
+        return f"<Node {self.value}>"
 
 #  graph = {
 #   'A' : ['B','C'],
