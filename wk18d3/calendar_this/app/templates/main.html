@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Calendar App</title>
+</head>
+
+<body>
+  <form method="post" action="/">
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.name.label }}
+      {{ form.name(size=32) }}
+    </p>
+    <p>
+      {{ form.start_date.label }}
+      {{ form.start_date(size=32) }}
+    </p>
+    <p>
+      {{ form.start_time.label }}
+      {{ form.start_time(size=32) }}
+    </p>
+    <p>
+      {{ form.end_date.label }}
+      {{ form.end_date(size=32) }}
+    </p>
+    <p>
+      {{ form.end_time.label }}
+      {{ form.end_time(size=32) }}
+    </p>
+    <p>
+      {{ form.description.label }}
+      {{ form.description(size=32) }}
+    </p>
+    <p>
+      {{ form.private.label }}
+      {{ form.private(size=32) }}
+    </p>
+    <p>{{ form.submit() }}</p>
+    <!-- use your form variable here -->
+    <!-- to make your form           -->
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Start</th>
+        <th>End</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+      {% set (row_num ,name, start, end) = row %}
+      <tr>
+        <td>{{ name }}</td>
+        <td>{{ start.strftime("%H:%M") }}</td>
+        <td>{{ end.strftime("%H:%M") }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+
+</html>
