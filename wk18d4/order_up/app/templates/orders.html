@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Order Up!</h1>
+<form method="post" action="{{ url_for('.index') }}">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.employee_id.label }}
+        {{ form.employee_id }}
+    </div>
+    <div>
+        {{ form.table_id.label }}
+        {{ form.table_id }}
+    </div>
+    <div>{{ form.submit }}</div>
+</form>
+<form method="post" action="{{ url_for('.index') }}">
+    {{ update.hidden_tag() }}
+    <div>
+        {{ update.order_id.label }}
+        {{ update.order_id }}
+    </div>
+    <div>
+        {{ update.menu_item_id.label }}
+        {{ update.menu_item_id }}
+    </div>
+    <div>{{ update.submit }}</div>
+</form>
+<form method="post" action="{{ url_for('.index') }}">
+    {{ close.hidden_tag() }}
+    <div>
+        {{ close.order_id.label }}
+        {{ close.order_id }}
+    </div>
+    <div>{{ close.submit }}</div>
+</form>
+{% endblock %}
