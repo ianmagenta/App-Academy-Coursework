@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        {% for package in packages %}
+        <li>
+            <p>
+                id = {{package.id}}
+                sender = {{package.sender}}
+                recipient = {{package.recipient}}
+                origin = {{package.origin}}
+                destination = {{package.destination}}
+                current location = {{package.location}}</p>
+        </li>
+
+
+        {% endfor %}
+
+    </ul>
+
+</body>
+
+</html>

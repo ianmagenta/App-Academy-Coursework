@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShipForm</title>
+</head>
+
+<body>
+    <form method="post" action="/new_package">
+        {{form.csrf_token}}
+        <div>
+            {{form.name.label}} {{form.name}}
+        </div>
+        <div>
+            {{form.recipient.label}} {{form.recipient}}
+        </div>
+        <div>
+            {{form.origin.label}} {{form.origin}}
+        </div>
+        <div>
+            {{form.destination.label}} {{form.destination}}
+        </div>
+        <div>
+            {{form.express.label}} {{form.express}}
+        </div>
+        <div>
+            {{form.submit}}
+        </div>
+        <button type="reset">Cancel</button>
+
+    </form>
+</body>
+
+</html>
